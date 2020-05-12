@@ -44,6 +44,9 @@ class RegistrationFormType extends AbstractType
             ->add('fullname', null, [
                 'required' => true,
                 'constraints' => [
+                    new NotBlank([
+                        'message' => 'Введите ваше имя.'
+                    ]),
                     new Regex([
                         'pattern' => '/^[А-Я][-А-я ]+$/u',
                         'message' => 'Имя может содержать только русские буквы, а также пробелы и дефисы'
